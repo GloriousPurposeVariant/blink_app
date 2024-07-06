@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  filter: "all", // Possible values: 'all', 'archived'
+  filter: "active", // Possible values: 'active', 'archived'
   isSidebarActive: false,
   isSidebarPinned: false,
 };
