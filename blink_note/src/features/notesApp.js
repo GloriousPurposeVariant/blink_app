@@ -1,11 +1,12 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addNote, updateNote, deleteNote } from './noteSlice';
+import React from "react";
+import NavBar from "./components/navBar";
+import LeftSidebar from "./components/leftSideBar/leftSideBar";
+import { useSelector, useDispatch } from "react-redux";
+import { addNote, updateNote, deleteNote } from "./noteSlice";
 
 const NoteApp = () => {
   const notes = useSelector((state) => state.notes);
   const dispatch = useDispatch();
-  console.log(notes, dispatch)
 
   const handleAddNote = (id, text) => {
     dispatch(addNote({ id, text }));
@@ -21,14 +22,13 @@ const NoteApp = () => {
 
   return (
     <div>
-      {notes.map(note => (
-        <div key={note.id}>
-          <span>{note.text}</span>
-          <button onClick={() => handleDeleteNote(note.id)}>Delete</button>
-          <button onClick={() => handleChangeNote({ ...note, text: 'Updated text' })}>Change</button>
+      <NavBar />
+      <div className="note-container">
+        <div>
+          <LeftSidebar />
         </div>
-      ))}
-      <button onClick={() => handleAddNote(notes.length, 'New Note')}>Add Note</button>
+        <div>content</div>
+      </div>
     </div>
   );
 };
