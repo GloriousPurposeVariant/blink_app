@@ -4,6 +4,8 @@ const initialState = {
   filter: "active", // Possible values: 'active', 'archived'
   isSidebarActive: false,
   isSidebarPinned: false,
+
+  view: "grid_view", // Possible values: 'grid_view', 'list_view'
 };
 
 const filterSidebarSlice = createSlice({
@@ -11,7 +13,6 @@ const filterSidebarSlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state, action) => {
-      console.log(action)
       state.filter = action.payload;
     },
     toggleSidebar: (state, action) => {
@@ -20,8 +21,12 @@ const filterSidebarSlice = createSlice({
       }
       state.isSidebarActive = !state.isSidebarActive;
     },
+    toggleView: (state, action) => {
+      state.view = action.payload;
+    },
   },
 });
 
-export const { setFilter, toggleSidebar } = filterSidebarSlice.actions;
+export const { setFilter, toggleSidebar, toggleView } =
+  filterSidebarSlice.actions;
 export default filterSidebarSlice.reducer;

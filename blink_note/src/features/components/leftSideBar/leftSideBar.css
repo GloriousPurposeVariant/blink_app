@@ -1,19 +1,24 @@
 .sidebar {
-    width: 74px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: width 300ms;
 
+    width: 74px;
+    background: #fff;
+    /* position: absolute; */
+    height: 100vh;
 }
+
 .sidebar.active {
     width: 250px;
+    /* position: unset; */
+    /* height: 100vh; */
 }
 
 .sidebar.active {
     border-right: 1px solid #dfdfdf;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;  
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .sidebar-logo img {
@@ -34,8 +39,14 @@
     cursor: pointer;
 }
 
-.sidebar-item:hover {
+.sidebar .sidebar-item.active {
     background-color: #ffdb88;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.sidebar-item:hover {
+    background-color: #dfdfdf;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
 }
@@ -43,10 +54,24 @@
 .blink-menu-icon {
     width: 24px;
 }
+
 .menu-content {
     padding-left: 12px;
 }
+
 .menu-text {
     margin-left: 20px;
     font-size: 18px;
+}
+
+@media (max-width: 780px) {
+    .sidebar {
+        position: absolute;
+        height: 100vh;
+    }
+
+    .notes-list-all {
+        margin-left: 74px;
+    }
+
 }

@@ -1,0 +1,35 @@
+.note-list.list_view {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+  
+  /* noteList.css */
+.note-list.grid_view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .note-list.grid_view {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .note-list.grid_view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .note-list.grid_view {
+    grid-template-columns: 1fr;
+  }
+}

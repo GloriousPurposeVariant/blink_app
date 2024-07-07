@@ -10,6 +10,14 @@
   justify-content: center !important;
 }
 
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.align-items-start {
+  align-items: flex-start !important;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -38,7 +46,45 @@
   cursor: pointer;
 }
 
+.dy-font-size {
+  font-size: 16px;
+  /* Default for larger screens */
+}
 
+.add-tools-icon {
+  width: 24px;
+}
+.pe-16px {
+  padding-right: 16px;
+}
+
+.gap-12px {
+  gap: 12px;
+}
+.note-list-all-container {
+  padding: 16px;
+  overflow-y: scroll;
+  height: 90vh;
+}
+
+/* Dynamic font size using calc */
+@media (max-width: 1200px) {
+  .dy-font-size {
+    font-size: calc(16px + (12 - 16) * ((100vw - 320px) / (1200 - 320)));
+  }
+}
+
+@media (max-width: 768px) {
+  .dy-font-size {
+    font-size: calc(14px + (10 - 14) * ((100vw - 320px) / (800 - 320)));
+  }
+}
+
+@media (max-width: 480px) {
+  .dy-font-size {
+    font-size: 8px;
+  }
+}
 
 
 .hamburger-icon {
@@ -59,8 +105,46 @@
   padding: 12px 8px;
   border-bottom: 1px solid #dfdfdf;
   box-shadow: rgb(220 220 220 / 20%) 0px 2px 8px 0px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  z-index: 1;
 }
 
 .ps-14px {
   padding-left: 14px;
+}
+
+.note-sub-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.notes-list-all {
+  width: 100%;
+}
+
+.note-container {
+  position: relative;
+  top: 60px;
+}
+
+.add-tools-icon {
+  padding: 4px;
+}
+
+.add-icons-container {
+  border-radius: 8px;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.add-icons-container:hover {
+  background: #dfdfdf;
+
 }

@@ -1,0 +1,76 @@
+.take-note-container.container-active textarea {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow-y: auto;
+    max-height: 300px;
+    background-color: transparent;
+}
+
+.take-note-container.container-active textarea::placeholder {
+    color: #ccc;
+}
+
+.text-editor-card {
+    position: relative;
+    /* height: 34rem;
+    /* Set a fixed height */
+    /* overflow-y: auto;
+    padding: 10px; */
+}
+
+.scroll-container {
+    overflow-y: scroll;
+    height: 31rem;
+}
+
+.h-14rem {
+    height: 14rem;
+}
+
+.h-34rem {
+    height: 34rem;
+}
+.h-20rem {
+    height: 20rem;
+}
+.p-4px {
+    padding: 4px;
+}
+
+.tool-containers {
+    position: absolute;
+    bottom: 0;
+}
+
+.image-container {
+    margin-top: 10px;
+    /* Adjust margin as needed */
+}
+
+.image-list {
+    display: flex;
+    justify-content: center;
+    /* Center align items horizontally */
+    flex-wrap: wrap;
+    gap: 5px;
+    height: 280px
+}
+
+.image-wrapper {
+    width: 33.33%;
+    /* Each image takes one-third of the container width */
+    box-sizing: border-box;
+    display: flex;
+    /* Center align the image horizontally */
+    height: inherit;
+}
+
+.image-item {
+    max-width: 100%;
+    /* Ensure the image does not exceed its original size */
+    height: auto;
+    /* Maintain aspect ratio */
+}

@@ -1,0 +1,96 @@
+const initialState = [
+    {
+      id: 0,
+      heading: "Project Kickoff",
+      text: "Schedule the initial project meeting and send invites.",
+      isPinned: true,
+      state: "active",
+    },
+    {
+      id: 1,
+      heading: "Client Meeting",
+      text: "Prepare presentation slides for the client meeting.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 2,
+      heading: "Design Review",
+      text: "Review the latest design mockups and provide feedback.",
+      isPinned: true,
+      state: "active",
+    },
+    {
+      id: 3,
+      heading: "Team Standup",
+      text: "Daily team standup meeting to discuss progress and blockers.",
+      isPinned: false,
+      state: "archived",
+    },
+    {
+      id: 4,
+      heading: "Code Review",
+      text: "Conduct code review for the new feature implementation.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 5,
+      heading: "Budget Planning",
+      text: "Create budget estimates for the upcoming quarter.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 6,
+      heading: "Launch Campaign",
+      text: "Plan and execute the marketing campaign for the product launch.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 7,
+      heading: "Content Strategy",
+      text: "Develop a content strategy for the company blog.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 8,
+      heading: "Performance Review",
+      text: "Prepare notes and agenda for the quarterly performance reviews.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 9,
+      heading: "Vendor Meeting",
+      text: "Meet with the vendor to discuss the new contract terms.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 10,
+      heading: "Training Session",
+      text: "Organize a training session for the new software tools.",
+      isPinned: false,
+      state: "active",
+    },
+    {
+      id: 11,
+      heading: "Market Research",
+      text: "Conduct market research to identify new opportunities.",
+      isPinned: false,  
+      state: "active",
+    },
+    {
+      id: 12,
+      heading: "Website Update",
+      text: "Update the company website with the latest news and events.",
+      isPinned: false,
+      state: "active",
+    },
+  ];
+
+  export default initialState
+  

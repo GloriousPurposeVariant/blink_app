@@ -1,0 +1,95 @@
+.take-note-container {
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  margin: 20px;
+  width: 80vw;
+  width: 34vw;
+  max-width: 900px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.take-note-container.container-inactive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.take-note-container.container-active {
+  width: 34vw;
+  max-width: 850px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin: 20px;
+}
+
+.note-take-a-note-container {
+  margin: 32px auto 16px auto;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.h-1rem {
+  height: 1rem;
+}
+
+.h-14rem {
+  height: 14rem;
+}
+
+/* @media (max-width: 670px) {
+    .take-note-container {
+      width: calc(80vw - 150px); 
+    }
+  }
+
+  @media (max-width: 435px) {
+    .take-note-container {
+      width: calc(70vw - 30px); 
+      padding: 10px;
+      min-width: unset;
+    }
+  } */
+
+
+
+.take-note-input {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.take-note-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.take-note-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.take-note-button.save {
+  background-color: #28a745;
+  color: white;
+}
+
+.take-note-button.cancel {
+  background-color: #dc3545;
+  color: white;
+}

@@ -31,7 +31,7 @@ const LeftSidebar = () => {
         {Menus.map((menu, index) => (
           <li
             key={index}
-            className="sidebar-item"
+            className={`sidebar-item ${filterSidebar.filter ===  menu.filter ? 'active' : ''}`}
             onClick={() => handleMenuClick(menu.filter)}
           >
             <div className="d-flex menu-content align-items-center">

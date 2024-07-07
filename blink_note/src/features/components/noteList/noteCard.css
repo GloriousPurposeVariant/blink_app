@@ -1,0 +1,43 @@
+.note-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 16px;
+    margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.note-grid {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    word-break: break-word;
+  }
+
+.note-content {
+    margin-bottom: 12px;
+}
+
+.note-heading {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.note-text {
+    white-space: pre-wrap;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-actions button {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    padding: 0;
+}
