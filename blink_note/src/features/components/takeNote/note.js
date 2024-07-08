@@ -180,7 +180,6 @@ const Note = ({
               value={currentNote.heading}
               onChange={(e) => handleNoteChange("heading", e.target.value)}
               placeholder="Heading"
-              // className={`dy-font-size ${currentNote.heading.length > 80 ? 'h-d50px':''}`}
               className={`dy-font-size ${
                 currentNote.heading.length > 80
                   ? currentNote.images.length
@@ -188,9 +187,7 @@ const Note = ({
                     : "h-d130px"
                   : ""
               }`}
-              // currentNote.text.length > 100 ? currentNote.images.length ? 'h-d70px': currentNote.text.length > 180 ? 'h-d90px': 'h-d70px':''
             />
-            {/* 130, 350 */}
             <textarea
               value={currentNote.text}
               onChange={(e) => handleNoteChange("text", e.target.value)}
@@ -241,7 +238,7 @@ const Note = ({
             <div onClick={handleDeleteNote} className="add-icons-container">
               <img src={Delete} alt="Delete" className="add-tools-icon" />
             </div>
-            {currentNote.id && (
+            {currentNote.id ? (
               <div onClick={handleArchive} className="add-icons-container">
                 <img
                   src={currentNote.state === "active" ? Archive : UnArchive}
@@ -249,7 +246,7 @@ const Note = ({
                   className="add-tools-icon"
                 />
               </div>
-            )}
+            ) : ""}
           </div>
           <div className="d-flex gap-12px">
             <div onClick={handleCancel} className="add-icons-container">
