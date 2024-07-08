@@ -96,11 +96,6 @@ const Note = ({
     handleCloseNote && handleCloseNote();
   };
   useEffect(() => {
-    console.log(
-      currentNote.heading.length,
-      "currentNote.images.length ",
-      setclassName
-    );
     if (
       currentNote.images.length ||
       currentNote.text.length > 200 ||
@@ -122,7 +117,6 @@ const Note = ({
       const updatedImages = prevNote.images.filter(
         (_, index) => index !== indexToRemove
       );
-      console.log(updatedImages, "updatedImages")
       return {
         ...prevNote,
         images: updatedImages,

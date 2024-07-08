@@ -8,7 +8,6 @@ const noteSlice = createSlice({
   initialState,
   reducers: {
     addNote: (state, action) => {
-      console.log('assasdadadsadsadsadsads', action)
       state.push({ id, state: "active", ...action.payload }); //TODO maybe create id here
       id++;
     },

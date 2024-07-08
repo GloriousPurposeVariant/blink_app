@@ -64,7 +64,6 @@ const TakeNote = () => {
     e.preventDefault();
     e.stopPropagation();
     dispatch(setTakeNoteMode("create"));
-    console.log(action, "action");
     if (action === "image") {
       setImageMode(true);
     }
