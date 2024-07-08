@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNote } from "../../noteSlice";
-import { setTakeNoteMode } from "../../takeNoteslice";
+import { setTakeNoteMode, setclassName } from "../../takeNoteslice";
 import Note from "./note";
 import "./takeNote.css";
 import AddImage from "../../../assets/add-image.png";
@@ -14,18 +14,17 @@ const TakeNote = () => {
     background: "",
     images: [],
   });
-  const [selectedImages, setSelectedImages] = useState([]);
+  const [imageMode, setImageMode] = useState(false)
+  const [canSave, setCanSave] = useState(false)
   const takeNote = useSelector((state) => state.takeNote);
   const dispatch = useDispatch();
   const takeNoteRef = useRef(null);
-  const fileInputRef = useRef(null);
 
   const handleCloseNote = () => {
     if (
       note.heading ||
       note.text ||
       note.isPinned ||
-      note.background ||
       note.images.length > 0
     ) {
       dispatch(addNote(note));
@@ -33,12 +32,6 @@ const TakeNote = () => {
     handleDeleteNote();
   };
 
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
   const handleDeleteNote = () => {
     setNote({
       heading: "",
@@ -47,51 +40,23 @@ const TakeNote = () => {
       background: "",
       images: [],
     });
-    setSelectedImages([]);
     dispatch(setTakeNoteMode("idle"));
+    setImageMode(false)
+    setCanSave(false)
+    handleSetclassName()
   };
+  const handleColorChange = (color) => {
+    setNote((prevNote) => ({
+      ...prevNote,
+      background: color
+    }))
+  } 
 
   const handleClickOutside = (e) => {
-    console.log(e, takeNoteRef, "sdffd");
     if (takeNoteRef.current && !takeNoteRef.current.contains(e.target)) {
       if (takeNote.takeNoteMode !== "idle") {
         dispatch(setTakeNoteMode("idle"));
       }
-    }
-  };
-
-  const handleFileInputChange = async (e) => {
-    const files = Array.from(e.target.files);
-    const base64Images = [];
-
-    try {
-      for (const file of files) {
-        const base64 = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.readAsDataURL(file);
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = (error) => reject(error);
-        });
-        base64Images.push(base64);
-      }
-
-      setSelectedImages(base64Images);
-      setNote((prevNote) => ({
-        ...prevNote,
-        images: [...prevNote.images, ...base64Images]
-        // images: prevNote.images.concat(
-        //   base64Images.slice(0, 3 - prevNote.images.length)
-      }));
-
-      console.log("Images converted to base64:", base64Images);
-    } catch (error) {
-      console.error("Error converting file to base64:", error);
-    }
-  };
-
-  const handleImageUploadClick = () => {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
     }
   };
 
@@ -101,32 +66,30 @@ const TakeNote = () => {
     dispatch(setTakeNoteMode("create"));
     console.log(action, "action");
     if (action === "image") {
-      handleImageUploadClick();
+      setImageMode(true);
     }
   };
-
-  const handleSave = () => {
-    // if (noteText.trim()) {
-    //   dispatch(addNote({ id: Date.now(), text: noteText, done: false }));
-    //   setNoteText("");
-    //   dispatch(setTakeNoteMode("idle"));
-    // }
-  };
-
-  const handleCancel = () => {
-    dispatch(setTakeNoteMode("idle"));
-  };
-  // "h-14rem container-active"
+  const handleSetNote = (value) => {
+    setNote(value)
+    setCanSave(true)
+  }
+  useEffect(() => {
+    if (canSave) {
+      handleCloseNote()
+    }
+  }, [canSave])
+  const handleSetclassName = (className) => {
+    dispatch(setclassName(className))
+  }
 
   return (
-    <div
+    <div style={{ backgroundColor: note.background }}
       ref={takeNoteRef}
       className={`take-note-container ${
         takeNote.takeNoteMode === "idle"
-          ? "h-1rem container-inactive"
-          : note.images.length > 0
-          ? "h-34rem container-active"
-          : "h-14rem container-active"
+          ? "h-1rem container-inactive": "h-14rem container-active" 
+      } ${
+        takeNote.takeNoteMode !== "idle" && takeNote.className
       }`}
     >
       {takeNote.takeNoteMode === "idle" ? (
@@ -148,19 +111,13 @@ const TakeNote = () => {
         <Note
           note={note}
           handleDeleteNote={handleDeleteNote}
-          handleCloseNote={handleCloseNote}
-          setNote={setNote}
-          handleImageUploadClick={handleImageUploadClick}
+          setNote={handleSetNote}
+          handleBackgroundColorChange={handleColorChange}
+          openImage={imageMode}
+          setclassName={handleSetclassName}
+          closeNote={handleDeleteNote}
         />
       )}
-      <input
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={handleFileInputChange}
-        style={{ display: "none" }}
-        ref={fileInputRef}
-      />
     </div>
   );
 };

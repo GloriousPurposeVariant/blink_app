@@ -69,9 +69,37 @@
         position: absolute;
         height: 100vh;
     }
+    .note-list-display-name {
+        padding-left: 18px;
+    }
 
     .notes-list-all {
         margin-left: 74px;
     }
+
+    .take-note-container {
+        width: 56vw !important;
+    }
+    .take-note-container.container-active {
+        padding: 8px;
+    }
+
+    .note-list-all-container {
+        height: 85vh;
+        padding-left: unset;
+    }
+
+    .h-20rem {
+        height: 10rem !important;
+    }
+
+    .h-34rem {
+        height: 20rem !important;
+    }
+
+    .add-tools-icon {
+        width: 16px;
+    }
+
 
 }

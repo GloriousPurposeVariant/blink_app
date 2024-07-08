@@ -2,8 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   takeNoteMode: 'idle', // Possible values: 'idle', 'create', 'edit'
-  heading: "",
-  body: ""
+  className: "h-34rem",
 };
 
 const takeNoteModeSlice = createSlice({
@@ -12,9 +11,12 @@ const takeNoteModeSlice = createSlice({
   reducers: {
     setTakeNoteMode: (state, action) => {
       state.takeNoteMode = action.payload;
-    }
+    },
+    setclassName: (state, action) => {
+      state.className = action.payload || "h-34rem";
+    },
   },
 });
 
-export const { setTakeNoteMode } = takeNoteModeSlice.actions;
+export const { setTakeNoteMode, setclassName } = takeNoteModeSlice.actions;
 export default takeNoteModeSlice.reducer;

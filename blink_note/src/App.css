@@ -76,13 +76,13 @@
 
 @media (max-width: 768px) {
   .dy-font-size {
-    font-size: calc(14px + (10 - 14) * ((100vw - 320px) / (800 - 320)));
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .dy-font-size {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 
@@ -136,6 +136,7 @@
 
 .add-tools-icon {
   padding: 4px;
+  width: 24px;
 }
 
 .add-icons-container {

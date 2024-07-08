@@ -1,16 +1,31 @@
 .note-list.list_view {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-  }
-  
-  /* noteList.css */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+/* noteList.css */
 .note-list.grid_view {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.pin-container {
+  position: absolute;
+  right: 0;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 

@@ -5,7 +5,6 @@
   border-radius: 8px;
   background-color: #ffffff;
   margin: 20px;
-  width: 80vw;
   width: 34vw;
   max-width: 900px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -42,6 +41,18 @@
 
 .h-14rem {
   height: 14rem;
+}
+
+@media (max-width: 1600px) {
+  .take-note-container {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .take-note-container {
+    width: 50vw;
+  }
 }
 
 /* @media (max-width: 670px) {

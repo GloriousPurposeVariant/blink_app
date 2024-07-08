@@ -1,5 +1,4 @@
-.take-note-container.container-active textarea {
-    width: 100%;
+.text-editor-card textarea {
     padding: 8px;
     border: none;
     outline: none;
@@ -7,9 +6,14 @@
     overflow-y: auto;
     max-height: 300px;
     background-color: transparent;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #dfdfdf;
+}
+.gap-12px {
+    gap: 12px;
 }
 
-.take-note-container.container-active textarea::placeholder {
+.text-editor-card textarea::placeholder {
     color: #ccc;
 }
 
@@ -33,11 +37,30 @@
 .h-34rem {
     height: 34rem;
 }
+
 .h-20rem {
     height: 20rem;
 }
+
 .p-4px {
     padding: 4px;
+}
+
+.h-d50px {
+    height: 50px;
+}
+
+.h-d70px {
+    height: 70px;
+}
+.h-d90px {
+    height: 90px;
+}
+.h-d350px {
+    height: 350px;
+}
+.h-d130px {
+    height: 130px;
 }
 
 .tool-containers {

@@ -5,6 +5,8 @@ const initialState = [
       text: "Schedule the initial project meeting and send invites.",
       isPinned: true,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 1,
@@ -12,6 +14,8 @@ const initialState = [
       text: "Prepare presentation slides for the client meeting.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 2,
@@ -19,6 +23,8 @@ const initialState = [
       text: "Review the latest design mockups and provide feedback.",
       isPinned: true,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 3,
@@ -26,6 +32,8 @@ const initialState = [
       text: "Daily team standup meeting to discuss progress and blockers.",
       isPinned: false,
       state: "archived",
+      images: [],
+      background: "",
     },
     {
       id: 4,
@@ -33,6 +41,8 @@ const initialState = [
       text: "Conduct code review for the new feature implementation.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 5,
@@ -40,6 +50,8 @@ const initialState = [
       text: "Create budget estimates for the upcoming quarter.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 6,
@@ -47,6 +59,8 @@ const initialState = [
       text: "Plan and execute the marketing campaign for the product launch.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 7,
@@ -54,6 +68,8 @@ const initialState = [
       text: "Develop a content strategy for the company blog.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 8,
@@ -61,6 +77,8 @@ const initialState = [
       text: "Prepare notes and agenda for the quarterly performance reviews.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 9,
@@ -68,6 +86,8 @@ const initialState = [
       text: "Meet with the vendor to discuss the new contract terms.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 10,
@@ -75,6 +95,8 @@ const initialState = [
       text: "Organize a training session for the new software tools.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 11,
@@ -82,6 +104,8 @@ const initialState = [
       text: "Conduct market research to identify new opportunities.",
       isPinned: false,  
       state: "active",
+      images: [],
+      background: "",
     },
     {
       id: 12,
@@ -89,6 +113,8 @@ const initialState = [
       text: "Update the company website with the latest news and events.",
       isPinned: false,
       state: "active",
+      images: [],
+      background: "",
     },
   ];
 

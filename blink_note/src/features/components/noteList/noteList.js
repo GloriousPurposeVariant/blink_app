@@ -26,7 +26,7 @@ const NoteList = (props) => {
 
   return (
     <div>
-      {notes.length > 0 && <div>{props.displayText}</div>}{" "}
+      {notes.length > 0 && <div className="note-list-display-name">{props.displayText}</div>}{" "}
       <div className={`note-list ${view}`}>
         {notes.map((note) =>
           view === "list_view" ? (
